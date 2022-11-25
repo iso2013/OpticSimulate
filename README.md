@@ -2,7 +2,7 @@
 Authors:
 Zadia Hughes, Kim Lindquist, EJ Mercer
 
-### Functions & Explanations 
+## Functions & Explanations 
 
 - SimulPhoton
 
@@ -29,7 +29,7 @@ This function takes one photon's initial position, and repeatedly applies the Si
 - OpticRenderStatic
 
 Parameters: A list of elements, a list of sources, and a boundary configuration
-Returns: A rendered image of that simulation, without animation
+Returns: A rendered image of that simulation, witsout animation
 
 This function takes the parameters for a simulation and calls SimulBeam for each of the sources' photons, then it composites the resulting beam and the images of the structures into a single image, which is returned.
 
@@ -39,13 +39,29 @@ This function takes the parameters for a simulation and calls SimulBeam for each
 This function is the same as the OpticRenderStatic method, except it animates the resulting list from the SimulBeam call to produce an animation of how beams would propagate over time.
 
 
-### Other Structures
+## Other Structures
+
+### Elements
+
+An element is a function that returns a specific object, which contains information about how to simulate that object. The function always accepts the position parameters and can optionally accept additional parameters depending on the object. It always returns an Associations object with the following keys:
+- "check" -> A function that accepts the position information of the particle (x, y, xVel, yVel, in that order) and returns True if that particle would be affected by this element in this simulation step, or false otherwise.
+- "update" -> A function that accepts the same position information, and returns a list of the new particle's information, in the same order.
+- "graphics" -> A list of graphics elements that represent this object.
+
+
+**Important note:** All elements should be modelled as an element of radius 1 at the origin, facing up. For example, a basic mirror is modelled as a flat mirror from (-1, 0) to (1, 0). Any rotation or transformation __of the simulation__ is handled automatically by the simulation engine; however, it is the responsibility of the element to correctly transform the graphics returned. This is why the element position information is given to the element - the x coordinate, y coordinate, scale, and angle (in terms of radians, where horizontal facing up is 0 radians).
+
+
+The following are provided as default elements:
 
 - SimpleMirror (Element)
 - SimpleLens (Element)
 - ComplexMirror (Element)
 - ComplexLens (Element)
 
+### Sources
+
+The sources will be implemented in a similar manner to the elements - receiving a x coordinate, y ccoordinate, and scale, as well as any additional parameters. The sources return a list of initial photon positions, rather than an associations object. Sources themselves are not rendered.
 
 - BeamSource (Source)
 - PointSource (Source)
