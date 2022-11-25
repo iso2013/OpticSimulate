@@ -2,6 +2,18 @@
 Authors:
 Zadia Hughes, Kim Lindquist, EJ Mercer
 
+## Example
+
+```
+OpticRenderStatic[
+    {4, 3},         (* The bounds of the simulation *)
+    {BasicMirror[0.1,0.1,0,1.5], BasicMirror[1,0,0,1], BasicMirror[0,1.235,9 Pi / 16, 2]},         (* The elements of the simulation *)
+    ExecLimit -> 1000,         (* Change the execution limit to 1000 steps *)
+    Sources -> {{-2, 1, -3 Pi / 32, 0.02}},         (* The list of sources - currently just a single beam *)
+    PointSize -> 0.01         (* The rendered point size *)
+]
+```
+
 ## Functions & Explanations 
 
 - SimulPhoton
@@ -62,6 +74,9 @@ The following are provided as default elements:
 ### Sources
 
 The sources will be implemented in a similar manner to the elements - receiving a x coordinate, y ccoordinate, and scale, as well as any additional parameters. The sources return a list of initial photon positions, rather than an associations object. Sources themselves are not rendered.
+
+
+The following are provided as default sources:
 
 - BeamSource (Source)
 - PointSource (Source)
