@@ -57,7 +57,7 @@ This function is the same as the OpticRenderStatic method, except it animates th
 
 An element is a function that returns a specific object, which contains information about how to simulate that object. The function always accepts the position parameters and can optionally accept additional parameters depending on the object. It always returns an Associations object with the following keys:
 - "position" -> This acts as a passthrough of the element's position information.
-- "check" -> A function that accepts the position information of the particle (x, y, xVel, yVel, in that order) and returns True if that particle would be affected by this element in this simulation step, or false otherwise.
+- "check" -> A function that accepts the position information of the particle ({x, y, xVel, yVel}, in that order) and returns True if that particle would be affected by this element in this simulation step, or false otherwise.
 - "update" -> A function that accepts the same position information, and returns a list of the new particle's information, in the same order.
 - "graphics" -> A list of graphics elements that represent this object.
 
