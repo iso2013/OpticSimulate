@@ -5,7 +5,6 @@ BeginPackage["OpticSimulate`"]
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 
-
 Begin["`Private`"]
 
 (* ------- Utility Functions ------- *)
@@ -41,12 +40,12 @@ GetAST[element_] := Module[{elPos,linears, l2g, g2l},
 
 (* Generate the transforms for several elements and insert them into the elements. *)
 GenerateASTs[elements_] := Module[{gen, result},
-	result={};
+	result = {};
 	
 	Do[
-		gen=GetAST[entry];
-		entry["l2g"]=gen[[1]];
-		entry["g2l"]=gen[[2]];
+		gen = GetAST[entry];
+		entry["l2g"] = gen[[1]];
+		entry["g2l"] = gen[[2]];
 		AppendTo[result, entry];
 	, {entry, elements}];
 	
@@ -55,6 +54,15 @@ GenerateASTs[elements_] := Module[{gen, result},
 
 (* A function to do a quick check to see if two points are within a given distance of each other *)
 DistanceCheck[coords_, elPos_] := (((coords[[1]]-elPos[[1]]) ^ 2) + ((coords[[2]]-elPos[[2]]) ^ 2)) <= (elPos[[4]] ^ 2)
+
+(* Generates a line object given an expression. *)
+(* Example: ExpLine[Sin[#] &, {-1, 1}] would create the line from -1 to 1 of Sin[x].*)
+ExpLine[exp_, bounds_] := Module[{step, range, points},
+    step = (bounds[[2]] - bounds[[1]]) / 1000;
+    range = Range[bounds[[1]], bounds[[2]] - step, step];
+    points = {{#, exp[#]}, {# + step, exp[# + step]}} & /@ range;
+    Return[Line[points]]
+]
 
 (* ------- Engine Implementation Functions -------*)
 SimulPhoton[elements_, coords_] := Module[{pos, elLoc, local},
@@ -172,3 +180,9 @@ ConvexLens[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 End[]
 
 EndPackage[]
+
+
+
+
+
+
