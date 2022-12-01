@@ -4,6 +4,7 @@ BeginPackage["OpticSimulate`"]
 
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
+ConvexLens::usage= "ConvexLens[x,y,theta,scale]- Creates an element represneting a convex mirror"
 
 Begin["`Private`"]
 
@@ -146,36 +147,22 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
-
-ConcaveLens[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
-	check[pos_] := Sign[pos[[2]]]!=Sign[pos[[2]] + pos[[4]]];
-	update[pos_] := Module[{res},
-		(*plan for concave lens
-		the angle of refraction(measured from the horizontal) is given by the tangent of the height of the photon when it hits the lens (relative to the center of the lens) divided by the focal length  *)
+ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
+	check[pos_] := 0<=(pos[[2]]+pos[[4]])<=Sqrt[rad^2-(pos[[1]]+pos[[3]])^2]-Sqrt[rad^2-elScale^2]&&-1<(pos[[1]]+pos[[3]])<1;
+    update[pos_] := Module[{res},
+		res = pos;
+		res[[4]] = -res[[4]];
 		Return[res]
 	];
+	
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01], Line[{{-1,0},{1,0}}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]}
 	|>]
 ]
 
-ConvexLens[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
-	check[pos_] := Sign[pos[[2]]]!=Sign[pos[[2]] + pos[[4]]];
-	update[pos_] := Module[{res},
-		(*plan for convex lens
-		the angle of refraction(measured from the horizontal) is given by 180 -the tangent of the height of the photon when it hits the lens (relative to the center of the lens) divided by the focal length  *)
-		Return[res]
-	];
-	Return[<|
-		"position"->{elX, elY, elTheta, elScale},
-		"check"-> check,
-		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01], Line[{{-1,0},{1,0}}]}
-	|>]
-]
 
 End[]
 
