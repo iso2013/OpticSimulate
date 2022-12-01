@@ -159,7 +159,7 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]&,{-elScale,elScale}],ExpLine[-Sqrt[rad^2-#^2]+Sqrt[rad^2-elScale^2]&,{-elScale,elScale}]}
 	|>]
 ]
 
