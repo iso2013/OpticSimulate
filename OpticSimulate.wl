@@ -151,7 +151,12 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
 	check[pos_] := 0<=(pos[[2]]+pos[[4]])<=Sqrt[rad^2-(pos[[1]]+pos[[3]])^2]-Sqrt[rad^2-elScale^2]&&-1<(pos[[1]]+pos[[3]])<1;
     update[pos_] := Module[{res},
 		res = pos;
-		res[[4]] = -res[[4]];
+		\[Theta]1=ArcTan[res[[4]]/res[[3]]];
+		\[Theta]2=ArcTan[1/D[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]]]&;
+		\[Theta]i=\[Theta]1-\[Theta]2;
+		\[Theta]r=\[Theta]i/1.8;
+		res[[3]]=Sqrt[res[[3]]^2+res[[4]]^2]*Cos[\[Theta]r];
+		res[[4]]=Sqrt[res[[3]]^2+res[[4]]^2]*Sin[\[Theta]r];
 		Return[res]
 	];
 	
