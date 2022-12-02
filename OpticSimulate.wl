@@ -167,6 +167,18 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]&,{-elScale,elScale}],ExpLine[-Sqrt[rad^2-#^2]+Sqrt[rad^2-elScale^2]&,{-elScale,elScale}]}
 	|>]
 ]
+Mirrors[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render},
+	check[pos_]:= Module[{f1, f2}, 
+		exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
+		Return[
+			Sign[pos[[2]] - exp[pos[[1]]]] != 
+			Sign[pos[[2]] + pos[[4]] - exp[pos[[1]] + pos[[3]]]]
+		]
+	];
+	update[pos_] := Module[{}
+	
+	]
+]
 
 
 End[]
