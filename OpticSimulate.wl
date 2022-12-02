@@ -5,6 +5,9 @@ BeginPackage["OpticSimulate`"]
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 ConvexLens::usage= "ConvexLens[x,y,theta,scale]- Creates an element represneting a convex mirror"
+SimulBeam::usage = "SimulBeam - simulates a potato."
+SimulPhoton::usage = "bagels"
+GenerateASTs::usage = "fizz"
 
 Begin["`Private`"]
 
@@ -148,18 +151,25 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 	|>]
 ]
 ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
-	check[pos_] := 0<=(pos[[2]]+pos[[4]])<=Sqrt[rad^2-(pos[[1]]+pos[[3]])^2]-Sqrt[rad^2-elScale^2]&&-1<(pos[[1]]+pos[[3]])<1;
+	check[pos_] := Module[{exp1, exp2},
+		exp1[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
+		exp2[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+		Return[
+			Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]]
+			||Sign[pos[[2]]-exp2[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp2[pos[[1]]+pos[[3]]]
+		]]
+	];
     update[pos_] := Module[{res},
 		res = pos;
 		\[Theta]1=ArcTan[res[[4]]/res[[3]]];
-		\[Theta]2=ArcTan[1/D[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]]]&;
+		\[Theta]2=ArcTan[1/D[Sqrt[rad^2-(res[[1]])^2]-Sqrt[rad^2-1^2]]];
 		\[Theta]i=\[Theta]1-\[Theta]2;
 		\[Theta]r=\[Theta]i/1.8;
-		res[[3]]=Sqrt[res[[3]]^2+res[[4]]^2]*Cos[\[Theta]r];
-		res[[4]]=Sqrt[res[[3]]^2+res[[4]]^2]*Sin[\[Theta]r];
+		res[[3]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Cos[\[Theta]r];
+		res[[4]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Sin[\[Theta] r];
 		Return[res]
 	];
-	
+
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
