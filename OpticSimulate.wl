@@ -9,6 +9,7 @@ ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and
 SimulBeam::usage = "SimulBeam - simulates a potato."
 SimulPhoton::usage = "bagels"
 GenerateASTs::usage = "fizz"
+Mirror::usage
 
 Begin["`Private`"]
 
@@ -115,7 +116,7 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 ]
 
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.01}}}, CanvasColor->LightGray}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor->RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
 	realElems = GenerateASTs[elements];
 	canvas = {OptionValue[CanvasColor], Rectangle[{-(bounds[[1]])/2, -(bounds[[2]])/2}, {bounds[[1]]/2, bounds[[2]]/2}]};
 	
@@ -127,13 +128,13 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,S
 	
 	res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
 	
-	graphics = {canvas, source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
+	graphics = {source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
 	Do[
 		tempPos = elem["position"];
 		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]]], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
 	,{elem, realElems}];
 	
-	Return[Graphics[graphics]];
+	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
 ]
 
 (* ------- Element Functions ------- *)
@@ -197,7 +198,6 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 	|>]
 ]
 
-
 ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
 	upper[x_] =  -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2] + 0.5;
 	lower[x_] = Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2] - 0.5;
@@ -244,37 +244,32 @@ ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, u
 	|>]
 ]
 
-
-
-
-
-
-
-
-
-Mirrors[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render},
-	check[pos_]:= Module[{exp}, 
-		exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
+Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, exp},
+	exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
+	check[pos_]:= Module[{}, 
 		Return[
 			Sign[pos[[2]] - exp[pos[[1]]]] != 
 			Sign[pos[[2]] + pos[[4]] - exp[pos[[1]] + pos[[3]]]]
 		]
 	];
-	update[pos_] := Module[{exp, xnew, \[Theta]l, \[Theta]v, \[Theta]i},
-		exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
+	update[pos_] := Module[{xnew, \[Theta], velNew, res},
 		xnew = (pos[[1]]+pos[[3]])/2;
-		\[Theta]l = ArcTan[exp'[xnew]];
-		\[Theta]v = ArcTan[180-(pos[[4]]/pos[[3]])];
-		\[Theta]i = \[Theta]v - \[Theta]l
+		\[Theta] = ArcTan[exp'[xnew]];
+		velNew=RotationMatrix[-\[Theta]] . {pos[[3]], pos[[4]]} ;
+		velNew[[2]]=-velNew[[2]];
+		velNew=RotationMatrix[\[Theta]] . velNew;
+		res=pos;
+		res[[3]]=velNew[[1]];
+		res[[4]]=velNew[[2]];
+		Return[res]
 	];
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]&,{-elScale,elScale}],ExpLine[-Sqrt[rad^2-#^2]+Sqrt[rad^2-elScale^2]&,{-elScale,elScale}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[exp[#]&,{-elScale,elScale}]}
 	|>]
 ]
-
 
 End[]
 
