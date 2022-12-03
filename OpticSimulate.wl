@@ -67,9 +67,9 @@ ExpLine[exp_, bounds_] := Module[{step, range, points},
     Return[Line[points]]
 ]
 
-CropLists[beams_,t_] := Module[ {newbeams},
+CropLists[beams_,t_] := Module[{newbeams},
 	newbeams={};
-	For[i=1,i<= Length[beams], i++,
+	For[i = 1, i <= Length[beams], i++,
 		If[t < Length[beams[[i]]],
 			AppendTo[newbeams, Drop[beams[[i]],(t-Length[beams[[i]]])]],
 			AppendTo[newbeams, beams[[i]]]
@@ -136,8 +136,9 @@ Render[bounds_List, sources_List, beams_List, elements_List] := Module[{graphics
 	
 	Do[
 		tempPos = elem["position"];
-		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
-	,{elem, elements}];
+		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]],
+		{elem, elements}
+	];
 	
 	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
 ]
@@ -156,22 +157,8 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000
 		source[[4]] = velY;
 		
 		AppendTo[beams, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]]], 
-	{sourceInput, OptionValue[Sources]}];
-	
-	graphics = {};
-	
-	Do[
-		source = sourceInput;
-		velX = source[[4]]Cos[source[[3]]];
-		velY = source[[4]] Sin[source[[3]]];
-		source[[3]] = velX;
-		source[[4]] = velY;
-		
-		res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
-		AppendTo[graphics, source[[5]][[1]]];
-		AppendTo[graphics, PointSize[source[[5]][[2]]]];
-		AppendTo[graphics, Point[res]];,
-	{sourceInput, OptionValue[Sources]}];
+		{sourceInput, OptionValue[Sources]}
+	];
 	
 	Return[Render[bounds, OptionValue[Sources], beams, realElems]];
 ]
@@ -203,6 +190,7 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
 		]
 	];
+	
     update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
 		(* find angle at that x value *)
@@ -249,6 +237,7 @@ ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, u
 			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
 		]
 	];
+	
     update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
 		(* find angle at that x value *)
