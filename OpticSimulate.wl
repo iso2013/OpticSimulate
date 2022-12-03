@@ -4,7 +4,8 @@ BeginPackage["OpticSimulate`"]
 
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
-ConvexLens::usage= "ConvexLens[x,y,theta,scale]- Creates an element represneting a convex mirror"
+ConvexLens::usage = "ConvexLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a convex mirror"
+ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and element representing a concave mirror"
 SimulBeam::usage = "SimulBeam - simulates a potato."
 SimulPhoton::usage = "bagels"
 GenerateASTs::usage = "fizz"
@@ -197,6 +198,52 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 	|>]
 ]
 
+ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
+	upper[x_] =  -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2] + 0.5;
+	lower[x_] = Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2] - 0.5;
+	dupper[x_]  = -x / Sqrt[rad^2 - x^2];
+	dlower[x_] = x / Sqrt[rad^2 - x^2];
+	
+	check[pos_] := Module[{},
+		Return[
+			Sign[pos[[2]] - upper[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]] (* If it crosses the upper *)
+			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
+		]
+	];
+    update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
+		res = pos;
+		(* find angle at that x value *)
+		crossUpper = Sign[pos[[2]] - upper[pos[[1]]]]!=Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]];
+		angle = ArcTan[If[crossUpper, dupper, dlower][pos[[1]] + pos[[3]]/2]];
+		
+		(* rotate the velocity vetor by that angle *)
+		rotMat = RotationMatrix[-angle];
+		rotVel= rotMat . {res[[3]], res[[4]]};
+		mag = Norm[rotVel];
+		
+		(* find angle of incidence and angle of refraction *)
+		\[Theta]i = ArcCos[Dot[rotVel,{0, Sign[rotVel[[2]]]}]/Norm[rotVel]];
+		\[Theta]r = ArcSin[If[crossUpper, Sin[\[Theta]i]/1.8, Sin[\[Theta]i*1.8]]];
+		
+		(* create new velocity vector *)
+		newVel = {mag * Sin[\[Theta]r] * Sign[rotVel[[1]]], mag * Cos[\[Theta]r]*Sign[rotVel[[2]]]};
+		newVel = RotationMatrix[angle] . newVel;
+		
+		(* insert new velocity into pos and return it *)
+		res[[3]] = newVel[[1]];
+		res[[4]] = newVel[[2]];
+		
+		Return[res];
+	];
+
+	Return[<|
+		"position"->{elX, elY, elTheta, elScale},
+		"check"-> check,
+		"update"-> update,
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}], ExpLine[lower[#] &,{-1,1}], Line[{{-1,upper[-1]},{-1,lower[-1]}}], Line[{{1,upper[1]},{1,lower[1]}}]}
+	|>]
+]
+
 Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, dexp},
 	expr[x_] =  Sqrt[(rad^2) -((x)^2)] - Sqrt[(rad^2)-(1^2)];
 	dexp[x_] = x / Sqrt[(rad^2) - (x^2)];
@@ -224,7 +271,6 @@ Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, 
 		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[expr[#]&,{-1,1}]}
 	|>]
 ]
-
 
 End[]
 
