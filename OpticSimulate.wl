@@ -9,7 +9,7 @@ ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and
 SimulBeam::usage = "SimulBeam - simulates a potato."
 SimulPhoton::usage = "bagels"
 GenerateASTs::usage = "fizz"
-Mirror::usage = "test"
+CurvedMirror::usage = "test"
 
 Begin["`Private`"]
 
@@ -249,24 +249,36 @@ ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, u
 	|>]
 ]
 
-Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, dexp},
+CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, dexp},
+	(* expressions for lens and derivative of lens *)
 	expr[x_] =  Sqrt[(rad^2) -((x)^2)] - Sqrt[(rad^2)-(1^2)];
 	dexp[x_] = x / Sqrt[(rad^2) - (x^2)];
+	
+	(* checks the position of the partice to see if it has crossed over the mirror *)
 	check[pos_] := Module[{result, before, after}, 
 	    before = pos[[2]] - expr[pos[[1]]];
 	    after = pos[[2]] + pos[[4]] - expr[pos[[1]]+pos[[3]]];
 	    result = (Sign[before] != Sign[after]);
 		Return[result]
 	];
+	
+	(* reflects the partice, if hits the mirror, gets angle, rotates axis, flips y coord, flips axis back + updates pos *)
 	update[pos_] := Module[{xnew, \[Theta], velNew, res},
+	
+	    (*takes the avg of the xvalues, to get the new one, finds the angle between that vector and the x axis*)
 	    xnew = pos[[1]]+(pos[[3]]/2);
 		\[Theta] = ArcTan[dexp[xnew]];
+		
+		(*gets new velocity, by rotating the entire graph about theta (found above), reversing the y-coordinate, and rotating the graph back*)
 		velNew=RotationMatrix[\[Theta]] . {pos[[3]], pos[[4]]};
 		velNew[[2]]=-velNew[[2]];
 		velNew=RotationMatrix[-\[Theta]] . velNew;
+		
+		(*updtaes the position of the particle*)
 		res=pos;
 		res[[3]]=velNew[[1]];
 		res[[4]]=velNew[[2]];
+		
 		Return[res]
 	];
 	Return[<|
