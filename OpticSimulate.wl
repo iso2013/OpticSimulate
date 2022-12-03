@@ -5,11 +5,8 @@ BeginPackage["OpticSimulate`"]
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 ConvexLens::usage = "ConvexLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a convex mirror"
-ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and element representing a concave mirror"
-SimulBeam::usage = "SimulBeam - simulates a potato."
-SimulPhoton::usage = "bagels"
-GenerateASTs::usage = "fizz"
-CurvedMirror::usage = "test"
+ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a concave mirror"
+CurvedMirror::usage = "CurvedMirror[x,y,theta,scale,radiusofcurvature]- Creates an element representing a curved mirror"
 
 Begin["`Private`"]
 
@@ -115,9 +112,40 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 	Return[result]
 ]
 
+Render[bounds_List, sources_List, beams_List, elements_List] := Module[{graphics},
+	graphics = {};
+	
+	Do[
+	
+		AppendTo[graphics, sources[[i]][[5]][[1]]];
+		AppendTo[graphics, PointSize[sources[[i]][[5]][[2]]]];
+		AppendTo[graphics, Point[beams[[i]]]], 
+		{i, Length[sources]}
+	];
+	
+	Do[
+		tempPos = elem["position"];
+		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
+	,{elem, elements}];
+	
+	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
+]
+
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, graphics, velX, velY, tempPos, beams},
 	realElems = GenerateASTs[elements];
+	
+	beams = {};
+	
+	Do[
+		source = sourceInput;
+		velX = source[[4]]Cos[source[[3]]];
+		velY = source[[4]] Sin[source[[3]]];
+		source[[3]] = velX;
+		source[[4]] = velY;
+		
+		AppendTo[beams, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]]], 
+	{sourceInput, OptionValue[Sources]}];
 	
 	graphics = {};
 	
@@ -134,12 +162,7 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000
 		AppendTo[graphics, Point[res]];,
 	{sourceInput, OptionValue[Sources]}];
 	
-	Do[
-		tempPos = elem["position"];
-		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
-	,{elem, realElems}];
-	
-	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
+	Return[Render[bounds, OptionValue[Sources], beams, realElems]];
 ]
 
 (* ------- Element Functions ------- *)
@@ -292,6 +315,9 @@ CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, 
 End[]
 
 EndPackage[]
+
+
+
 
 
 
