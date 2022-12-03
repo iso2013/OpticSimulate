@@ -68,11 +68,14 @@ ExpLine[exp_, bounds_] := Module[{step, range, points},
 ]
 
 CropLists[beams_,t_] := Module[ {newbeams},
-newbeams={};
-For[i=1,i<= Length[beams], i++,
-If[t<Length[beams[[i]]],AppendTo[newbeams,Drop[beams[[i]],(t-Length[beams[[i]]])]], AppendTo[newbeams,beams[[i]]]]
-];
-Return[newbeams]
+	newbeams={};
+	For[i=1,i<= Length[beams], i++,
+		If[t < Length[beams[[i]]],
+			AppendTo[newbeams, Drop[beams[[i]],(t-Length[beams[[i]]])]],
+			AppendTo[newbeams, beams[[i]]]
+		];
+	];
+	Return[newbeams];
 ]
 
 (* ------- Engine Implementation Functions -------*)
