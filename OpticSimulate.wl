@@ -150,38 +150,38 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
-ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, exp1, exp2,der,der2},
-	exp1[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
-	exp2[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
-	der[x_]= x/Sqrt[rad^2-x^2];
-	der2[x_] = -x/Sqrt[rad^2-x^2];
+ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
+	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
+	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+	dupper[x_]  = x / Sqrt[rad^2 - x^2];
+	dlower[x_] = -x / Sqrt[rad^2 - x^2];
+	
 	check[pos_] := Module[{},
 		Return[
-			Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]]
-			||Sign[pos[[2]]-exp2[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp2[pos[[1]]+pos[[3]]]
-		]]
-	];
-    update[pos_] := Module[{res},
-		If[Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]],
-			res = pos;
-			polCor = ToPolarCoordinates[{pos[[3]],pos[[4]]}];
-			\[Theta]1= polCor[[2]];
-			\[Theta]2=ToPolarCoordinates[{der[pos[[1]]+.5*pos[[3]]],1}][[2]];
-			\[Theta]i=\[Theta]1-\[Theta]2; 
-			Print["incoming ", \[Theta]1, " ", \[Theta]2, " ", \[Theta]i, " ", \[Theta]r, " ", Sin[\[Theta]i]/1.8];
-			\[Theta]r=ArcSin[Sin[\[Theta]i]/1.8];
-			res[[3]]=polCor[[1]]*Cos[\[Theta]r];
-			res[[4]]=polCor[[1]]*Sin[\[Theta]r];,
-			res = pos;
-			polCor = ToPolarCoordinates[{pos[[3]],pos[[4]]}];
-			\[Theta]1= polCor[[2]];
-			\[Theta]2=ToPolarCoordinates[{der2[pos[[1]]+.5*pos[[3]]],1}][[2]];
-			\[Theta]i=\[Theta]1-\[Theta]2;
-			Print["outgoing ", \[Theta]1, " ", \[Theta]2, " ", \[Theta]i, " ", \[Theta]r, " ", Sin[\[Theta]i]*1.8];
-			\[Theta]r=ArcSin[Sin[\[Theta]i]*1.8];    
-			res[[3]]=polCor[[1]]*Cos[\[Theta]r];
-			res[[4]]=polCor[[1]]*Sin[\[Theta]r];
+			Sign[pos[[2]]-upper[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-upper[pos[[1]]+pos[[3]]]]
+			||Sign[pos[[2]]-lower[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-lower[pos[[1]]+pos[[3]]]]
+			]
 		];
+    update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
+		res = pos;
+		(*find angle at that x value*)
+		crossUpper = Sign[pos[[2]]-upper[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-upper[pos[[1]]+pos[[3]]]];
+		angle = ArcTan[If[crossUpper, dupper, dlower][pos[[1]]+pos[[3]]/2]];
+		
+		(*rotate the velocity vetor by that angle*)
+		rotMat = RotationMatrix[-angle];
+		rotVel= rotMat . {res[[3]], res[[4]]};
+		mag = Norm[rotVel];
+		(*find angle of incidence and angle of refraction*)
+		\[Theta]i = ArcCos[Dot[rotVel,{0, Sign[rotVel[[2]]]}]/Norm[rotVel]];
+		\[Theta]r = ArcSin[If[crossUpper, Sin[\[Theta]i]/1.8, Sin[\[Theta]i*1.8]]];
+		
+		newVel = {mag * Sin[\[Theta]r] * Sign[rotVel[[1]]], mag * Cos[\[Theta]r]*Sign[rotVel[[2]]]};
+		newVel = RotationMatrix[angle] . newVel;
+		
+		res[[3]] = newVel[[1]];
+		res[[4]] = newVel[[2]];
+		
 		Return[res];
 	];
 
@@ -189,7 +189,7 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, ex
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[exp1[#] &,{-1,1}],ExpLine[exp2[#] &,{-1,1}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}],ExpLine[lower[#] &,{-1,1}]}
 	|>]
 ]
 Mirrors[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render},
