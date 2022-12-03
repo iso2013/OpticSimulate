@@ -158,27 +158,30 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 	
 	check[pos_] := Module[{},
 		Return[
-			Sign[pos[[2]]-upper[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-upper[pos[[1]]+pos[[3]]]]
-			||Sign[pos[[2]]-lower[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-lower[pos[[1]]+pos[[3]]]]
-			]
-		];
+			Sign[pos[[2]] - upper[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]] (* If it crosses the upper *)
+			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
+		]
+	];
     update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
-		(*find angle at that x value*)
-		crossUpper = Sign[pos[[2]]-upper[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-upper[pos[[1]]+pos[[3]]]];
-		angle = ArcTan[If[crossUpper, dupper, dlower][pos[[1]]+pos[[3]]/2]];
+		(* find angle at that x value *)
+		crossUpper = Sign[pos[[2]] - upper[pos[[1]]]]!=Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]];
+		angle = ArcTan[If[crossUpper, dupper, dlower][pos[[1]] + pos[[3]]/2]];
 		
-		(*rotate the velocity vetor by that angle*)
+		(* rotate the velocity vetor by that angle *)
 		rotMat = RotationMatrix[-angle];
 		rotVel= rotMat . {res[[3]], res[[4]]};
 		mag = Norm[rotVel];
-		(*find angle of incidence and angle of refraction*)
+		
+		(* find angle of incidence and angle of refraction *)
 		\[Theta]i = ArcCos[Dot[rotVel,{0, Sign[rotVel[[2]]]}]/Norm[rotVel]];
 		\[Theta]r = ArcSin[If[crossUpper, Sin[\[Theta]i]/1.8, Sin[\[Theta]i*1.8]]];
 		
+		(* create new velocity vector *)
 		newVel = {mag * Sin[\[Theta]r] * Sign[rotVel[[1]]], mag * Cos[\[Theta]r]*Sign[rotVel[[2]]]};
 		newVel = RotationMatrix[angle] . newVel;
 		
+		(* insert new velocity into pos and return it *)
 		res[[3]] = newVel[[1]];
 		res[[4]] = newVel[[2]];
 		
