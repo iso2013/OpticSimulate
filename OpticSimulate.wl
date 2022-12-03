@@ -114,7 +114,7 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 ]
 
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.01}}}, CanvasColor->LightGray}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor->RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
 	realElems = GenerateASTs[elements];
 	canvas = {OptionValue[CanvasColor], Rectangle[{-(bounds[[1]])/2, -(bounds[[2]])/2}, {bounds[[1]]/2, bounds[[2]]/2}]};
 	
@@ -126,13 +126,13 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,S
 	
 	res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
 	
-	graphics = {canvas, source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
+	graphics = {source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
 	Do[
 		tempPos = elem["position"];
 		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]]], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
 	,{elem, realElems}];
 	
-	Return[Graphics[graphics]];
+	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
 ]
 
 (* ------- Element Functions ------- *)
