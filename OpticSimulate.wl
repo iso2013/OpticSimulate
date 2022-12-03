@@ -9,7 +9,7 @@ ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and
 SimulBeam::usage = "SimulBeam - simulates a potato."
 SimulPhoton::usage = "bagels"
 GenerateASTs::usage = "fizz"
-Mirror::usage
+CurvedMirror::usage = "test"
 
 Begin["`Private`"]
 
@@ -124,22 +124,27 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 ]
 
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor->RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
 	realElems = GenerateASTs[elements];
-	canvas = {OptionValue[CanvasColor], Rectangle[{-(bounds[[1]])/2, -(bounds[[2]])/2}, {bounds[[1]]/2, bounds[[2]]/2}]};
 	
-	source = OptionValue[Sources][[1]];
-	velX = source[[4]]Cos[source[[3]]];
-	velY = source[[4]] Sin[source[[3]]];
-	source[[3]] = velX;
-	source[[4]] = velY;
+	graphics = {};
 	
-	res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
+	Do[
+		source = sourceInput;
+		velX = source[[4]]Cos[source[[3]]];
+		velY = source[[4]] Sin[source[[3]]];
+		source[[3]] = velX;
+		source[[4]] = velY;
+		
+		res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
+		AppendTo[graphics, source[[5]][[1]]];
+		AppendTo[graphics, PointSize[source[[5]][[2]]]];
+		AppendTo[graphics, Point[res]];,
+	{sourceInput, OptionValue[Sources]}];
 	
-	graphics = {source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
 	Do[
 		tempPos = elem["position"];
-		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]]], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
+		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
 	,{elem, realElems}];
 	
 	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
@@ -252,30 +257,43 @@ ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, u
 	|>]
 ]
 
-Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, exp},
-	exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
-	check[pos_]:= Module[{}, 
-		Return[
-			Sign[pos[[2]] - exp[pos[[1]]]] != 
-			Sign[pos[[2]] + pos[[4]] - exp[pos[[1]] + pos[[3]]]]
-		]
+CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, dexp},
+	(* expressions for lens and derivative of lens *)
+	expr[x_] =  Sqrt[(rad^2) -((x)^2)] - Sqrt[(rad^2)-(1^2)];
+	dexp[x_] = x / Sqrt[(rad^2) - (x^2)];
+	
+	(* checks the position of the partice to see if it has crossed over the mirror *)
+	check[pos_] := Module[{result, before, after}, 
+	    before = pos[[2]] - expr[pos[[1]]];
+	    after = pos[[2]] + pos[[4]] - expr[pos[[1]]+pos[[3]]];
+	    result = (Sign[before] != Sign[after]);
+		Return[result]
 	];
+	
+	(* reflects the partice, if hits the mirror, gets angle, rotates axis, flips y coord, flips axis back + updates pos *)
 	update[pos_] := Module[{xnew, \[Theta], velNew, res},
-		xnew = (pos[[1]]+pos[[3]])/2;
-		\[Theta] = ArcTan[exp'[xnew]];
-		velNew=RotationMatrix[-\[Theta]] . {pos[[3]], pos[[4]]} ;
+	
+	    (*takes the avg of the xvalues, to get the new one, finds the angle between that vector and the x axis*)
+	    xnew = pos[[1]]+(pos[[3]]/2);
+		\[Theta] = ArcTan[dexp[xnew]];
+		
+		(*gets new velocity, by rotating the entire graph about theta (found above), reversing the y-coordinate, and rotating the graph back*)
+		velNew=RotationMatrix[\[Theta]] . {pos[[3]], pos[[4]]};
 		velNew[[2]]=-velNew[[2]];
-		velNew=RotationMatrix[\[Theta]] . velNew;
+		velNew=RotationMatrix[-\[Theta]] . velNew;
+		
+		(*updtaes the position of the particle*)
 		res=pos;
 		res[[3]]=velNew[[1]];
 		res[[4]]=velNew[[2]];
+		
 		Return[res]
 	];
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[exp[#]&,{-elScale,elScale}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[expr[#]&,{-1,1}]}
 	|>]
 ]
 
