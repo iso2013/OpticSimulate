@@ -150,31 +150,46 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
-ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
-	check[pos_] := Module[{exp1, exp2},
-		exp1[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
-		exp2[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, exp1, exp2,der,der2},
+	exp1[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
+	exp2[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+	der[x_]= x/Sqrt[rad^2-x^2];
+	der2[x_] = -x/Sqrt[rad^2-x^2];
+	check[pos_] := Module[{},
 		Return[
 			Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]]
 			||Sign[pos[[2]]-exp2[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp2[pos[[1]]+pos[[3]]]
 		]]
 	];
     update[pos_] := Module[{res},
-		res = pos;
-		\[Theta]1=ArcTan[res[[4]]/res[[3]]];
-		\[Theta]2=ArcTan[1/D[Sqrt[rad^2-(res[[1]])^2]-Sqrt[rad^2-1^2]]];
-		\[Theta]i=\[Theta]1-\[Theta]2;
-		\[Theta]r=\[Theta]i/1.8;
-		res[[3]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Cos[\[Theta]r];
-		res[[4]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Sin[\[Theta] r];
-		Return[res]
+		If[Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]],
+			res = pos;
+			polCor = ToPolarCoordinates[{pos[[3]],pos[[4]]}];
+			\[Theta]1= polCor[[2]];
+			\[Theta]2=ToPolarCoordinates[{der[pos[[1]]+.5*pos[[3]]],1}][[2]];
+			\[Theta]i=\[Theta]1-\[Theta]2; 
+			Print["incoming ", \[Theta]1, " ", \[Theta]2, " ", \[Theta]i, " ", \[Theta]r, " ", Sin[\[Theta]i]/1.8];
+			\[Theta]r=ArcSin[Sin[\[Theta]i]/1.8];
+			res[[3]]=polCor[[1]]*Cos[\[Theta]r];
+			res[[4]]=polCor[[1]]*Sin[\[Theta]r];,
+			res = pos;
+			polCor = ToPolarCoordinates[{pos[[3]],pos[[4]]}];
+			\[Theta]1= polCor[[2]];
+			\[Theta]2=ToPolarCoordinates[{der2[pos[[1]]+.5*pos[[3]]],1}][[2]];
+			\[Theta]i=\[Theta]1-\[Theta]2;
+			Print["outgoing ", \[Theta]1, " ", \[Theta]2, " ", \[Theta]i, " ", \[Theta]r, " ", Sin[\[Theta]i]*1.8];
+			\[Theta]r=ArcSin[Sin[\[Theta]i]*1.8];    
+			res[[3]]=polCor[[1]]*Cos[\[Theta]r];
+			res[[4]]=polCor[[1]]*Sin[\[Theta]r];
+		];
+		Return[res];
 	];
 
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]&,{-elScale,elScale}],ExpLine[-Sqrt[rad^2-#^2]+Sqrt[rad^2-elScale^2]&,{-elScale,elScale}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[exp1[#] &,{-1,1}],ExpLine[exp2[#] &,{-1,1}]}
 	|>]
 ]
 
