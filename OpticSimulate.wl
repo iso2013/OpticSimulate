@@ -150,31 +150,49 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
-ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render},
-	check[pos_] := Module[{exp1, exp2},
-		exp1[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
-		exp2[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
+	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
+	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+	dupper[x_]  = x / Sqrt[rad^2 - x^2];
+	dlower[x_] = -x / Sqrt[rad^2 - x^2];
+	
+	check[pos_] := Module[{},
 		Return[
-			Sign[pos[[2]]-exp1[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp1[pos[[1]]+pos[[3]]]]
-			||Sign[pos[[2]]-exp2[pos[[1]]]]!=Sign[pos[[2]]+pos[[4]]-exp2[pos[[1]]+pos[[3]]]
-		]]
+			Sign[pos[[2]] - upper[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]] (* If it crosses the upper *)
+			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
+		]
 	];
-    update[pos_] := Module[{res},
+    update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
-		\[Theta]1=ArcTan[res[[4]]/res[[3]]];
-		\[Theta]2=ArcTan[1/D[Sqrt[rad^2-(res[[1]])^2]-Sqrt[rad^2-1^2]]];
-		\[Theta]i=\[Theta]1-\[Theta]2;
-		\[Theta]r=\[Theta]i/1.8;
-		res[[3]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Cos[\[Theta]r];
-		res[[4]]=Sqrt[(res[[3]])^2+(res[[4]])^2]*Sin[\[Theta] r];
-		Return[res]
+		(* find angle at that x value *)
+		crossUpper = Sign[pos[[2]] - upper[pos[[1]]]]!=Sign[pos[[2]] + pos[[4]] - upper[pos[[1]] + pos[[3]]]];
+		angle = ArcTan[If[crossUpper, dupper, dlower][pos[[1]] + pos[[3]]/2]];
+		
+		(* rotate the velocity vetor by that angle *)
+		rotMat = RotationMatrix[-angle];
+		rotVel= rotMat . {res[[3]], res[[4]]};
+		mag = Norm[rotVel];
+		
+		(* find angle of incidence and angle of refraction *)
+		\[Theta]i = ArcCos[Dot[rotVel,{0, Sign[rotVel[[2]]]}]/Norm[rotVel]];
+		\[Theta]r = ArcSin[If[crossUpper, Sin[\[Theta]i]/1.8, Sin[\[Theta]i*1.8]]];
+		
+		(* create new velocity vector *)
+		newVel = {mag * Sin[\[Theta]r] * Sign[rotVel[[1]]], mag * Cos[\[Theta]r]*Sign[rotVel[[2]]]};
+		newVel = RotationMatrix[angle] . newVel;
+		
+		(* insert new velocity into pos and return it *)
+		res[[3]] = newVel[[1]];
+		res[[4]] = newVel[[2]];
+		
+		Return[res];
 	];
 
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[Sqrt[rad^2-#^2]-Sqrt[rad^2-elScale^2]&,{-elScale,elScale}],ExpLine[-Sqrt[rad^2-#^2]+Sqrt[rad^2-elScale^2]&,{-elScale,elScale}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}],ExpLine[lower[#] &,{-1,1}]}
 	|>]
 ]
 Mirrors[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render},
