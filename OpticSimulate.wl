@@ -116,19 +116,25 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 ]
 
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,Sources->{{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor->RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
 	realElems = GenerateASTs[elements];
 	canvas = {OptionValue[CanvasColor], Rectangle[{-(bounds[[1]])/2, -(bounds[[2]])/2}, {bounds[[1]]/2, bounds[[2]]/2}]};
 	
-	source = OptionValue[Sources][[1]];
-	velX = source[[4]]Cos[source[[3]]];
-	velY = source[[4]] Sin[source[[3]]];
-	source[[3]] = velX;
-	source[[4]] = velY;
+	graphics = {};
 	
-	res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
+	Do[
+		source = sourceInput;
+		velX = source[[4]]Cos[source[[3]]];
+		velY = source[[4]] Sin[source[[3]]];
+		source[[3]] = velX;
+		source[[4]] = velY;
+		
+		res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
+		AppendTo[graphics, source[[5]][[1]]];
+		AppendTo[graphics, PointSize[source[[5]][[2]]]];
+		AppendTo[graphics, Point[res]];,
+	{sourceInput, OptionValue[Sources]}];
 	
-	graphics = {source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
 	Do[
 		tempPos = elem["position"];
 		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
