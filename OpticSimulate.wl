@@ -8,7 +8,7 @@ ConvexLens::usage= "ConvexLens[x,y,theta,scale]- Creates an element represneting
 SimulBeam::usage = "SimulBeam - simulates a potato."
 SimulPhoton::usage = "bagels"
 GenerateASTs::usage = "fizz"
-Mirror::usage
+Mirror::usage = "test"
 
 Begin["`Private`"]
 
@@ -130,7 +130,7 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit->10000,S
 	graphics = {source[[5]][[1]], PointSize[source[[5]][[2]]], Point[res]};
 	Do[
 		tempPos = elem["position"];
-		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]]], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
+		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
 	,{elem, realElems}];
 	
 	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
@@ -196,20 +196,22 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}],ExpLine[lower[#] &,{-1,1}]}
 	|>]
 ]
-Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, exp},
-	exp[x_] = Sqrt[rad^2 - x^2] - Sqrt[rad^2 - 1];
-	check[pos_]:= Module[{}, 
-		Return[
-			Sign[pos[[2]] - exp[pos[[1]]]] != 
-			Sign[pos[[2]] + pos[[4]] - exp[pos[[1]] + pos[[3]]]]
-		]
+
+Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, expr, dexp},
+	expr[x_] =  Sqrt[(rad^2) -((x)^2)] - Sqrt[(rad^2)-(1^2)];
+	dexp[x_] = x / Sqrt[(rad^2) - (x^2)];
+	check[pos_] := Module[{result, before, after}, 
+	    before = pos[[2]] - expr[pos[[1]]];
+	    after = pos[[2]] + pos[[4]] - expr[pos[[1]]+pos[[3]]];
+	    result = (Sign[before] != Sign[after]);
+		Return[result]
 	];
 	update[pos_] := Module[{xnew, \[Theta], velNew, res},
-		xnew = (pos[[1]]+pos[[3]])/2;
-		\[Theta] = ArcTan[exp'[xnew]];
-		velNew=RotationMatrix[-\[Theta]] . {pos[[3]], pos[[4]]} ;
+	    xnew = pos[[1]]+(pos[[3]]/2);
+		\[Theta] = ArcTan[dexp[xnew]];
+		velNew=RotationMatrix[\[Theta]] . {pos[[3]], pos[[4]]};
 		velNew[[2]]=-velNew[[2]];
-		velNew=RotationMatrix[\[Theta]] . velNew;
+		velNew=RotationMatrix[-\[Theta]] . velNew;
 		res=pos;
 		res[[3]]=velNew[[1]];
 		res[[4]]=velNew[[2]];
@@ -219,7 +221,7 @@ Mirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, exp},
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[exp[#]&,{-elScale,elScale}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[expr[#]&,{-1,1}]}
 	|>]
 ]
 
