@@ -3,6 +3,7 @@
 BeginPackage["OpticSimulate`"]
 
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
+OpticRenderAnimate::usage = "OpticRenderStatic[bounds, elements] - Creates an animation of a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 ConvexLens::usage = "ConvexLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a convex mirror"
 ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a concave mirror"
@@ -163,6 +164,29 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000
 	Return[Render[bounds, OptionValue[Sources], beams, realElems]];
 ]
 
+OpticRenderAnimate[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, graphics, velX, velY, tempPos, beams, max},
+	realElems = GenerateASTs[elements];
+	
+	beams = {};
+	
+	Do[
+		source = sourceInput;
+		velX = source[[4]]Cos[source[[3]]];
+		velY = source[[4]] Sin[source[[3]]];
+		source[[3]] = velX;
+		source[[4]] = velY;
+		
+		AppendTo[beams, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]]], 
+		{sourceInput, OptionValue[Sources]}
+	];
+	
+	max = Max[Length /@ beams];
+	Print[max];
+	Print[CropLists[beams,15]];
+	
+	Return[Animate[Render[bounds, OptionValue[Sources], CropLists[beams, Floor[t]], realElems], {t, 0, max}, AnimationRate->60]];
+]
+
 (* ------- Element Functions ------- *)
 BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 	check[pos_] := Sign[pos[[2]]]!=Sign[pos[[2]] + pos[[4]]];
@@ -178,6 +202,7 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
+
 ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
 	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
 	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
@@ -304,6 +329,7 @@ CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, 
 		
 		Return[res]
 	];
+	
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
