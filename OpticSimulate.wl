@@ -3,13 +3,11 @@
 BeginPackage["OpticSimulate`"]
 
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
+OpticRenderAnimate::usage = "OpticRenderStatic[bounds, elements] - Creates an animation of a specified area with the specified elements"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 ConvexLens::usage = "ConvexLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a convex mirror"
-ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]-creates and element representing a concave mirror"
-SimulBeam::usage = "SimulBeam - simulates a potato."
-SimulPhoton::usage = "bagels"
-GenerateASTs::usage = "fizz"
-CurvedMirror::usage = "test"
+ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a concave mirror"
+CurvedMirror::usage = "CurvedMirror[x,y,theta,scale,radiusofcurvature]- Creates an element representing a curved mirror"
 
 Begin["`Private`"]
 
@@ -70,12 +68,15 @@ ExpLine[exp_, bounds_] := Module[{step, range, points},
     Return[Line[points]]
 ]
 
-CropLists[beams_,t_, OptionsPattern] := Module[ {newbeams},
-newbeams={};
-For[i=1,i<= Length[beams], i++,
-If[t<Length[beams[[i]]],AppendTo[newbeams,Drop[beams[[i]],(t-Length[beams[[i]]])]], AppendTo[newbeams,beams[[i]]]]
-];
-Return[newbeams]
+CropLists[beams_,t_] := Module[{newbeams},
+	newbeams={};
+	For[i = 1, i <= Length[beams], i++,
+		If[t < Length[beams[[i]]],
+			AppendTo[newbeams, Drop[beams[[i]],(t-Length[beams[[i]]])]],
+			AppendTo[newbeams, beams[[i]]]
+		];
+	];
+	Return[newbeams];
 ]
 
 (* ------- Engine Implementation Functions -------*)
@@ -123,11 +124,31 @@ SimulBeam[dims_, elements_, coords_, execLimit_]:=Module[{result, photon, execs}
 	Return[result]
 ]
 
+Render[bounds_List, sources_List, beams_List, elements_List] := Module[{graphics},
+	graphics = {};
+	
+	Do[
+	
+		AppendTo[graphics, sources[[i]][[5]][[1]]];
+		AppendTo[graphics, PointSize[sources[[i]][[5]][[2]]]];
+		AppendTo[graphics, Point[beams[[i]]]], 
+		{i, Length[sources]}
+	];
+	
+	Do[
+		tempPos = elem["position"];
+		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]],
+		{elem, elements}
+	];
+	
+	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
+]
+
 (* ------- Public Engine Functions ------- *)
-OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, res, graphics, velX, velY, tempPos},
+OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, graphics, velX, velY, tempPos, beams},
 	realElems = GenerateASTs[elements];
 	
-	graphics = {};
+	beams = {};
 	
 	Do[
 		source = sourceInput;
@@ -136,18 +157,34 @@ OpticRenderStatic[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000
 		source[[3]] = velX;
 		source[[4]] = velY;
 		
-		res = SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]];
-		AppendTo[graphics, source[[5]][[1]]];
-		AppendTo[graphics, PointSize[source[[5]][[2]]]];
-		AppendTo[graphics, Point[res]];,
-	{sourceInput, OptionValue[Sources]}];
+		AppendTo[beams, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]]], 
+		{sourceInput, OptionValue[Sources]}
+	];
+	
+	Return[Render[bounds, OptionValue[Sources], beams, realElems]];
+]
+
+OpticRenderAnimate[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 10000, Sources -> {{-2,1,-3Pi/32,0.02, {Blue, 0.007}}}, CanvasColor -> RGBColor[0.95,0.95,0.95]}]] := Module[{realElems, canvas, source, graphics, velX, velY, tempPos, beams, max},
+	realElems = GenerateASTs[elements];
+	
+	beams = {};
 	
 	Do[
-		tempPos = elem["position"];
-		AppendTo[graphics, Translate[Scale[Rotate[elem["graphics"], tempPos[[3]], {0,0}], tempPos[[4]]],{tempPos[[1]],tempPos[[2]]}]]
-	,{elem, realElems}];
+		source = sourceInput;
+		velX = source[[4]]Cos[source[[3]]];
+		velY = source[[4]] Sin[source[[3]]];
+		source[[3]] = velX;
+		source[[4]] = velY;
+		
+		AppendTo[beams, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]]], 
+		{sourceInput, OptionValue[Sources]}
+	];
 	
-	Return[Graphics[graphics,Frame->True,FrameTicks->Automatic,GridLines->Automatic,PlotRange->{{-(bounds[[1]])/2, (bounds[[1]])/2}, {-bounds[[2]]/2, bounds[[2]]/2}}, PlotRangeClipping->True]];
+	max = Max[Length /@ beams];
+	Print[max];
+	Print[CropLists[beams,15]];
+	
+	Return[Animate[Render[bounds, OptionValue[Sources], CropLists[beams, Floor[t]], realElems], {t, 0, max}, AnimationRate->60]];
 ]
 
 (* ------- Element Functions ------- *)
@@ -165,6 +202,7 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
+
 ConvexLens[elX_,elY_,elTheta_,elScale_,rad_,thickness_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
 	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2]+ thickness/2;
 	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2]-thickness/2;
@@ -177,6 +215,7 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_,thickness_]:=Module[{check, update, 
 			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
 		]
 	];
+	
     update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
 		(* find angle at that x value *)
@@ -223,6 +262,7 @@ ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_,thickness_]:=Module[{check, update,
 			||Sign[pos[[2]] - lower[pos[[1]]]] != Sign[pos[[2]] + pos[[4]] - lower[pos[[1]] + pos[[3]]]](* If it crosses the lower *)
 		]
 	];
+	
     update[pos_] := Module[{res, crossUpper, angle, rotMat, rotVel, mag, \[Theta]i, \[Theta]r, newVel},
 		res = pos;
 		(* find angle at that x value *)
@@ -289,6 +329,7 @@ CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, 
 		
 		Return[res]
 	];
+	
 	Return[<|
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
@@ -300,6 +341,9 @@ CurvedMirror[elX_,elY_,elTheta_,elScale_,rad_]:= Module[{check, update, render, 
 End[]
 
 EndPackage[]
+
+
+
 
 
 
