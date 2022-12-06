@@ -4,6 +4,7 @@ BeginPackage["OpticSimulate`"]
 
 OpticRenderStatic::usage = "OpticRenderStatic[bounds, elements] - Performs a static final-state simulation in a specified area with the specified elements"
 OpticRenderAnimate::usage = "OpticRenderStatic[bounds, elements] - Creates an animation of a specified area with the specified elements"
+OpticSimulateResult::usage = "OpticSimulateResult[bounds, elements, sources] - Returns the final position of the particles specified by the sources"
 BasicMirror::usage = "BasicMirror[x,y,theta,scale] - Creates an element representing a flat mirror of angle theta from the x-axis, with a given scaling factor (where the default mirror is of length 2)"
 ConvexLens::usage = "ConvexLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a convex mirror"
 ConcaveLens::usage = "ConcaveLens[x,y,theta,scale,radiusofcurvature]- Creates an element representing a concave mirror"
@@ -185,6 +186,24 @@ OpticRenderAnimate[bounds_List, elements_List, OptionsPattern[{ExecLimit -> 1000
 	Print[CropLists[beams,15]];
 	
 	Return[Animate[Render[bounds, OptionValue[Sources], CropLists[beams, Floor[t]], realElems], {t, 0, max}, AnimationRate->60]];
+]
+
+OpticSimulateResult[bounds_List, elements_List, sources_List, OptionsPattern[{ExecLimit -> 100000}]] := Module[{res, source, velX, velY},
+    realElems = GenerateASTs[elements];
+    res = {};
+    
+    Do[
+        source = sourceInput;
+        velX = source[[4]] Cos[source[[3]]]/100;
+        velY = source[[4]] Sin[source[[3]]]/100;
+        source[[3]] = velX;
+        source[[4]] = velY;
+        
+        AppendTo[res, SimulBeam[bounds, realElems, source, OptionValue[ExecLimit]][[-1]]],
+        {sourceInput, sources}
+    ];
+    
+    Return[res];
 ]
 
 (* ------- Element Functions ------- *)
