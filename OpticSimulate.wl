@@ -70,7 +70,7 @@ ExpLine[exp_, bounds_] := Module[{step, range, points},
     Return[Line[points]]
 ]
 
-CropLists[beams_,t_] := Module[ {newbeams},
+CropLists[beams_,t_, OptionsPattern] := Module[ {newbeams},
 newbeams={};
 For[i=1,i<= Length[beams], i++,
 If[t<Length[beams[[i]]],AppendTo[newbeams,Drop[beams[[i]],(t-Length[beams[[i]]])]], AppendTo[newbeams,beams[[i]]]]
@@ -165,9 +165,9 @@ BasicMirror[elX_,elY_,elTheta_,elScale_]:=Module[{check, update,  render},
 		"graphics" -> {Black, Thickness[0.01 / elScale], Line[{{-1,0},{1,0}}]} 
 	|>]
 ]
-ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
-	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2];
-	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2];
+ConvexLens[elX_,elY_,elTheta_,elScale_,rad_,thickness_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
+	upper[x_] =  Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2]+ thickness/2;
+	lower[x_] = -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2]-thickness/2;
 	dupper[x_]  = x / Sqrt[rad^2 - x^2];
 	dlower[x_] = -x / Sqrt[rad^2 - x^2];
 	
@@ -207,13 +207,13 @@ ConvexLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, up
 		"position"->{elX, elY, elTheta, elScale},
 		"check"-> check,
 		"update"-> update,
-		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}],ExpLine[lower[#] &,{-1,1}]}
+		"graphics" -> {Black, Thickness[0.01 / elScale], ExpLine[upper[#] &,{-1,1}],ExpLine[lower[#] &,{-1,1}],Line[{{-1,upper[-1]},{-1,lower[-1]}}], Line[{{1,upper[1]},{1,lower[1]}}]}
 	|>]
 ]
 
-ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
-	upper[x_] =  -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2] + 0.5;
-	lower[x_] = Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2] - 0.5;
+ConcaveLens[elX_,elY_,elTheta_,elScale_,rad_,thickness_]:=Module[{check, update,  render, upper, lower,dupper,dlower},
+	upper[x_] =  -Sqrt[rad^2 -(x)^2] + Sqrt[rad^2-1^2] + thickness/2;
+	lower[x_] = Sqrt[rad^2 -(x)^2] - Sqrt[rad^2-1^2] - thickness/2;
 	dupper[x_]  = -x / Sqrt[rad^2 - x^2];
 	dlower[x_] = x / Sqrt[rad^2 - x^2];
 	
