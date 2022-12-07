@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    358041,       6175]
-NotebookOptionsPosition[    355146,       6128]
-NotebookOutlinePosition[    355597,       6145]
-CellTagsIndexPosition[    355554,       6142]
+NotebookDataLength[    328089,       5976]
+NotebookOptionsPosition[    325323,       5920]
+NotebookOutlinePosition[    325774,       5937]
+CellTagsIndexPosition[    325731,       5934]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,7 +31,7 @@ Cell[BoxData[{
  RowBox[{"<<", " ", "\"\<OpticSimulate.wl\>\""}]}], "Code",
  CellChangeTimes->{{3.8792922641978207`*^9, 3.8792923085844417`*^9}, {
   3.879292355818181*^9, 3.8792923561846447`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"40331012-ad0f-49e0-898c-1687c6972ce5"],
+ CellLabel->"In[5]:=",ExpressionUUID->"40331012-ad0f-49e0-898c-1687c6972ce5"],
 
 Cell[CellGroupData[{
 
@@ -134,7 +134,7 @@ yyD36MAq5u9cKUG/2ECE+b31dnO2MkGE+f+TnYrOzSYRlg+est6ZQ8prWH6E
  CellChangeTimes->{{3.87929267784077*^9, 3.8792926888113527`*^9}, 
    3.8792927235432215`*^9, 3.8794364579181194`*^9},
  CellLabel->"Out[3]=",ExpressionUUID->"ec19704c-10e5-4617-9a6f-315e6b96288f"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -148,7 +148,7 @@ Cell[BoxData[
      RowBox[{"0", ",", "0", ",", "0", ",", "1.2", ",", "2"}], "]"}], "}"}]}], 
   "]"}]], "Code",
  CellChangeTimes->{{3.8792927532366962`*^9, 3.8792927584090447`*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"3002fb1c-4f22-42d4-8565-0dbddfff2632"],
+ CellLabel->"In[11]:=",ExpressionUUID->"3002fb1c-4f22-42d4-8565-0dbddfff2632"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -5222,8 +5222,9 @@ U7l2kUXKDDStlSm1cQwEr2CPLBuYgfEpjun5NAb+DzOr2GE=
       Rational[-3, 2], 
       Rational[3, 2]}}, {{-2, 2}, {-1.5, 1.5}}],
   PlotRangeClipping->True]], "Output",
- CellChangeTimes->{3.8794364283557634`*^9, 3.879436460929684*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"1ac10ccd-2a16-4739-ace2-d3e04f39a64c"]
+ CellChangeTimes->{3.8794364283557634`*^9, 3.879436460929684*^9, 
+  3.879438342607405*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"2bfed847-2c13-4764-adff-be9ec2b49e25"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5255,419 +5256,139 @@ Cell[BoxData[
   3.8792937733190145`*^9, 3.8792938012681046`*^9}, {3.879436471701949*^9, 
   3.8794364817066774`*^9}, {3.8794366437257843`*^9, 3.879436646239315*^9}, {
   3.879436695369423*^9, 3.879436730921517*^9}, {3.879436779670807*^9, 
-  3.879436784038845*^9}},ExpressionUUID->"5d060c04-929f-46a6-8254-\
+  3.879436784038845*^9}, {3.879438141749973*^9, 
+  3.879438163216167*^9}},ExpressionUUID->"5d060c04-929f-46a6-8254-\
 c9c903c1cadc"],
 
-Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"4\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \\\
-\",\\\", \\\"1\\\", \\\",\\\", FractionBox[\\\"\[Pi]\\\", \\\"3\\\"], \\\",\\\
-\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}]\\) does not exist.\"", 2, 3, 1, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436771813337*^9},
+Cell[CellGroupData[{
+
+Cell[BoxData["217"], "Print",
+ CellChangeTimes->{3.879438145842098*^9},
  CellLabel->
   "During evaluation of \
-In[3]:=",ExpressionUUID->"b9a70d5f-5f8f-40f9-aaea-d343d67e2415"],
+In[8]:=",ExpressionUUID->"132167e1-8152-4fde-a7f4-75b65c090a7d"],
 
 Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"4\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \\\
-\",\\\", \\\"1\\\", \\\",\\\", FractionBox[\\\"\[Pi]\\\", \\\"3\\\"], \\\",\\\
-\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}]\\) does not exist.\"", 2, 3, 2, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.8794367719524245`*^9},
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.980861193285356`"}], ",", "0.9941943064549108`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9617223865707119`"}], ",", "0.9883886129098216`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9425835798560678`"}], ",", "0.9825829193647324`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9234447731414237`"}], ",", "0.9767772258196432`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9043059664267796`"}], ",", "0.970971532274554`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8851671597121356`"}], ",", "0.9651658387294648`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8660283529974915`"}], ",", "0.9593601451843756`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8468895462828474`"}], ",", "0.9535544516392864`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8277507395682033`"}], ",", "0.9477487580941972`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8086119328535593`"}], ",", "0.941943064549108`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.7894731261389152`"}], ",", "0.9361373710040188`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.770334319424271`"}], ",", "0.9303316774589296`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.751195512709627`"}], ",", "0.9245259839138404`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.732056705994983`"}], ",", "0.9187202903687512`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.7129178992803389`"}], ",", "0.912914596823662`"}], 
+     "}"}]}], "}"}], "}"}]], "Print",
+ CellChangeTimes->{3.879438145851288*^9},
  CellLabel->
   "During evaluation of \
-In[3]:=",ExpressionUUID->"49713441-7d2c-4aa6-85af-a13425535d80"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"3\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \\\
-\",\\\", \\\"1\\\", \\\",\\\", FractionBox[\\\"\[Pi]\\\", \\\"3\\\"], \\\",\\\
-\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}]\\) does not exist.\"", 2, 3, 3, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436771969899*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"bbe965ec-e374-4650-8687-53fca0b8e2c6"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
-\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
-calculation.\"", 2, 3, 4, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436771983925*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"563786dd-b8b4-4197-8946-5ae628615215"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"1\\\", \\\",\\\", \\\"1\\\", \\\",\\\", \
-FractionBox[\\\"\[Pi]\\\", \\\"3\\\"], \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", RowBox[{\\\
-\"{\\\", RowBox[{RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"-\\\", \\\"\\\\\\\"position\\\\\\\
-\"\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\
-\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \\\",\\\", \\\"1\\\", \\\",\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \\\"0.75`\\\", \
-\\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \
-\\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", FractionBox[RowBox[{\\\
-\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"-\\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \
-\\\",\\\", \\\"1\\\", \\\",\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\
-\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\
-\",\\\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \
-\\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\
-\"\\\", \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"-\\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\
-\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"-\\\", \
-FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \
-\\\"2\\\"}], \\\"-\\\", \\\"\\\\\\\"position\\\\\\\"\\\"}], \\\")\\\"}], \\\" \
-\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
-\\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"20\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\
-\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\
-\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}]}], RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}]], \\\"-\\\", FractionBox[RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]]}], \\\",\\\", \
-RowBox[{RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"0.005805693545089247`\\\", \
-\\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\" \\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \
-\\\")\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"-\\\", FractionBox[RowBox[{\
-\\\"0.01913880671464418`\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1\\\", \
-\\\",\\\", \\\"1\\\", \\\",\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\
-\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\
-\",\\\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \
-\\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\
-\"\\\", \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\
-\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2\\\", \\\",\\\", \
-\\\"2\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 5, 32365621633268496086,
-    "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436772131497*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"53ab8557-fa39-4eaa-8f67-147b8021f818"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"1.`\\\", \\\",\\\", \\\"1.`\\\", \\\",\\\", \
-\\\"1.0471975511965976`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", RowBox[{\\\
-\"{\\\", RowBox[{RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"-\\\", \\\"2.`\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \
-\\\" \\\", \\\"\\\\\\\"position\\\\\\\"\\\"}]}], \\\")\\\"}], \\\" \\\", \
-RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
-\\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1.`\\\", \
-\\\",\\\", \\\"1.`\\\", \\\",\\\", \\\"1.0471975511965976`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", \
-FractionBox[RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"1.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"-\\\", \
-RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \
-\\\")\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"1.`\\\", \\\",\\\", \\\"1.`\\\", \\\",\\\", \
-\\\"1.0471975511965976`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}], \\\" \\\
-\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\
-\\\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]}]}], \\\")\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"-\\\", \
-FractionBox[RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}]}], RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]]}], \\\",\\\", RowBox[{FractionBox[RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]], \\\"-\\\", \
-FractionBox[RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]]}], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
-FractionBox[RowBox[{\\\"0.005805693545089247`\\\", \\\" \\\", RowBox[{\\\"(\\\
-\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"-\\\", FractionBox[RowBox[{\
-\\\"0.01913880671464418`\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1.`\\\", \
-\\\",\\\", \\\"1.`\\\", \\\",\\\", \\\"1.0471975511965976`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\
-\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2.`\\\", \\\",\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}]}], \
-\\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 6, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436772260234*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"2f1db6b4-65fc-4cf7-b2b6-7a8c01c0a2dd"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"1.`\\\", \\\",\\\", \\\"1.`\\\", \\\",\\\", \
-\\\"1.0471975511965976`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", RowBox[{\\\
-\"{\\\", RowBox[{RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"-\\\", \\\"2.`\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \
-\\\" \\\", \\\"\\\\\\\"position\\\\\\\"\\\"}]}], \\\")\\\"}], \\\" \\\", \
-RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
-\\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1.`\\\", \
-\\\",\\\", \\\"1.`\\\", \\\",\\\", \\\"1.0471975511965976`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", \
-FractionBox[RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"1.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"-\\\", \
-RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \
-\\\")\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"1.`\\\", \\\",\\\", \\\"1.`\\\", \\\",\\\", \
-\\\"1.0471975511965976`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}], \\\" \\\
-\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\
-\\\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]}]}], \\\")\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"-\\\", \
-FractionBox[RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}]}], RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]]}], \\\",\\\", RowBox[{FractionBox[RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]], \\\"-\\\", \
-FractionBox[RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}]]}], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
-FractionBox[RowBox[{\\\"0.005805693545089247`\\\", \\\" \\\", RowBox[{\\\"(\\\
-\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"-\\\", FractionBox[RowBox[{\
-\\\"0.01913880671464418`\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"1.`\\\", \
-\\\",\\\", \\\"1.`\\\", \\\",\\\", \\\"1.0471975511965976`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\
-\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2.`\\\", \\\",\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}]}], \
-\\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 7, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.8794367722930193`*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"b1ec7d21-c481-4ca8-a628-f8283c7d4a79"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ArrayReshape\\\", \
-\\\"::\\\", \\\"listrp\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
-during this calculation.\"", 2, 3, 8, 32365621633268496086, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8794364763737454`*^9, 3.8794365782932715`*^9, 
-  3.8794366871020393`*^9, 3.879436772411056*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"857fc49e-6ff3-4e67-97b6-28d308e08aa7"]
+In[8]:=",ExpressionUUID->"2820fef8-7ac4-473e-863c-4670cc0102c8"]
 }, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{OpticSimulate`Private`t$$ = 181.1706600189209, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[OpticSimulate`Private`t$$], 0, 217}}, Typeset`size$$ = {
+    396.00000000000006`, {196., 201.83325099945074`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {OpticSimulate`Private`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      OpticSimulate`Private`Render[{4, 4}, 
+        OptionValue[{
+         OpticSimulate`Private`ExecLimit -> 10000, 
+          OpticSimulate`Private`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 0, 1], 0.007}}}, OpticSimulate`Private`CanvasColor -> 
+          RGBColor[0.95, 0.95, 0.95]}, {}, OpticSimulate`Private`Sources], 
+        OpticSimulate`Private`CropLists[OpticSimulate`Private`beams$28508, 
+         Floor[OpticSimulate`Private`t$$]], 
+        OpticSimulate`Private`realElems$28508], 
+      "Specifications" :> {{
+        OpticSimulate`Private`t$$, 0, 217, AnimationRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{836., {220.34743643933908`, 226.65256356066092`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8794377944050837`*^9, 3.8794381458750257`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"637ee80a-98fa-46fd-83b8-db6a1ec37d25"]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -5675,25 +5396,21 @@ Cell[BoxData[
  RowBox[{"OpticRenderAnimate", "[", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"4", ",", "3"}], "}"}], ",", " ", 
+    RowBox[{"4", ",", "4"}], "}"}], ",", " ", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"CurvedMirror", "[", 
-      RowBox[{"0", ",", 
-       RowBox[{"-", "0.5"}], ",", "0", ",", "0.75", ",", " ", "4"}], "]"}], 
-     ",", " ", 
-     RowBox[{"ConvexLens", "[", 
+     RowBox[{"ConcaveLens", "[", 
       RowBox[{
-      "0", ",", " ", "0.5", ",", " ", "Pi", ",", " ", "0.75", ",", " ", "2", 
-       ",", " ", "0.6", ",", " ", "1.5"}], "]"}]}], "}"}], ",", " ", 
-   RowBox[{"Sources", " ", "->", " ", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      RowBox[{"0", ",", " ", "1.5", ",", " ", 
-       RowBox[{"Pi", "/", "2"}], ",", " ", "0.002", ",", " ", 
-       RowBox[{"{", 
-        RowBox[{"Blue", ",", " ", "0.01"}], "}"}]}], "}"}], "}"}]}]}], 
-  "]"}]], "Code",
+       RowBox[{"-", "1.5"}], " ", ",", " ", "0.75", " ", ",", " ", 
+       RowBox[{"Pi", "/", "2"}], " ", ",", " ", "0.75", " ", ",", " ", "2", 
+       " ", ",", " ", "0.6"}], "]"}], ",", " ", 
+     RowBox[{"ConvexLens", "[", 
+      RowBox[{"1", ",", "1", ",", 
+       RowBox[{"Pi", "/", "3"}], ",", "0.75", ",", "2", ",", " ", "0.6"}], 
+      "]"}], ",", " ", 
+     RowBox[{"CurvedMirror", "[", 
+      RowBox[{"0", ",", "0.2", ",", "0", ",", " ", "0.5", ",", " ", "3"}], 
+      "]"}]}], "}"}]}], "]"}]], "Code",
  CellChangeTimes->{{3.8792924424473305`*^9, 3.8792924770792837`*^9}, {
    3.8792925093215113`*^9, 3.879292512949897*^9}, {3.879292780498272*^9, 
    3.8792928011876726`*^9}, {3.8792938672192817`*^9, 3.87929389523928*^9}, {
@@ -5702,433 +5419,508 @@ Cell[BoxData[
    3.8792945473350163`*^9, 3.8792946117421856`*^9}, {3.8792946494146*^9, 
    3.879294663296447*^9}, 3.8793582197657547`*^9, 3.8793583064868593`*^9, {
    3.8793583644659777`*^9, 3.879358391110154*^9}, {3.8793584578841558`*^9, 
-   3.8793584599460278`*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"3b2b3f8f-95ef-4471-a93f-0241afa6c187"],
+   3.8793584599460278`*^9}, {3.8794378837487288`*^9, 
+   3.8794378846224594`*^9}, {3.8794381750806236`*^9, 3.879438179689176*^9}},
+ CellLabel->"",ExpressionUUID->"3b2b3f8f-95ef-4471-a93f-0241afa6c187"],
 
-Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"4\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \\\
-\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\", \\\"0.75`\\\", \\\
-\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\
-\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}]\\) does not \
-exist.\"", 2, 3, 1, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.8793585169571934`*^9},
+Cell[CellGroupData[{
+
+Cell[BoxData["0"], "Print",
+ CellChangeTimes->{3.8794379012766666`*^9, 3.8794379623218327`*^9, 
+  3.879438126353115*^9},
  CellLabel->
   "During evaluation of \
-In[3]:=",ExpressionUUID->"b5fbc757-c34d-4e13-8bc7-785c734be6d4"],
+In[7]:=",ExpressionUUID->"13105caf-49f9-48c2-8d47-1e75f1a924a6"],
 
 Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"4\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \\\
-\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\", \\\"0.75`\\\", \\\
-\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\
-\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}]\\) does not \
-exist.\"", 2, 3, 2, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.879358517005911*^9},
+ RowBox[{"{", 
+  RowBox[{"{", "}"}], "}"}]], "Print",
+ CellChangeTimes->{3.8794379012766666`*^9, 3.8794379623218327`*^9, 
+  3.8794381263580675`*^9},
  CellLabel->
   "During evaluation of \
-In[3]:=",ExpressionUUID->"5db68bf9-f2eb-471e-8f32-d9fa9fa8a2e4"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Part", "partw", 
-   "\"Part \\!\\(\\*RowBox[{\\\"3\\\"}]\\) of \
-\\!\\(\\*RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \\\
-\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\", \\\"0.75`\\\", \\\
-\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\
-\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}]\\) does not \
-exist.\"", 2, 3, 3, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.879358517083823*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"848437ce-faee-4406-a71d-20b56a09750c"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
-\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
-calculation.\"", 2, 3, 4, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.879358517104107*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"cba1d4c5-3da1-4103-8eda-e014d2b322dc"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\
-\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\
-\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
-FractionBox[RowBox[{\\\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", \
-RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
-\\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\", \\\"0.75`\\\", \
-\\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \
-\\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"+\\\", FractionBox[RowBox[{\
-\\\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}]}], \\\")\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \
-\\\"[\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\
-\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \
-\\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\
-\"\\\", \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", FractionBox[RowBox[{\\\
-\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"\[Pi]\\\", \\\",\\\", \\\"0.75`\\\", \
-\\\",\\\", \\\"2\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \
-\\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}], \\\" \\\
-\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0\\\", \
-\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"5\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \
-RowBox[{\\\"\\\\\\\"p\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \\\"\\\\\\\"n\\\\\\\"\
-\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\\\"}], \
-\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2\\\", \\\",\\\", \\\"2\\\"}], \
-\\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 5, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.8793585171939955`*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"6b1625ff-f34f-4974-9fa5-79120ee1694f"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"0.`\\\", \\\",\\\", \\\"0.5`\\\", \\\",\\\", \
-\\\"3.141592653589793`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \
-\\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \
-\\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
-RowBox[{RowBox[{RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"1.`\\\", \\\" \
-\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\
-\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\
-\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \\\",\\\", \\\"0.5`\\\", \
-\\\",\\\", \\\"3.141592653589793`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"+\\\", FractionBox[RowBox[{\
-\\\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\
-\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"3.141592653589793`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\
-\\\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\" \\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \
-\\\")\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", FractionBox[RowBox[{\\\
-\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"18\\\
-\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\\\\\\\"\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \
-\\\"\\\\\\\"\\\\\\\"\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
-\\\"4\\\", \\\"\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
-\\\"\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \
-\\\",\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", \
-RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
-\\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\\\"}], \
-\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2.`\\\", \\\",\\\", \\\"2.`\\\"}], \
-\\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 6, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.8793585172961497`*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"119dc0bd-e844-4134-be20-4fb45de47ad9"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ArrayReshape", "listrp", 
-   "\"List or SparseArray or structured array expected at position \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"0.`\\\", \\\",\\\", \\\"0.5`\\\", \\\",\\\", \
-\\\"3.141592653589793`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \
-\\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \
-\\\"\\\\\\\"update\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
-RowBox[{RowBox[{RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"1.`\\\", \\\" \
-\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\
-\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}], \\\" \\\", RowBox[{RowBox[{RowBox[{\
-\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \\\",\\\", \\\"0.5`\\\", \
-\\\",\\\", \\\"3.141592653589793`\\\", \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \\\"]\\\"}], \\\"\
-\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\"+\\\", FractionBox[RowBox[{\
-\\\"1.`\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\
-\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", \\\"3.141592653589793`\\\", \\\",\\\", \\\
-\"0.75`\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \
-\\\"1.5`\\\"}], \\\"]\\\"}], \\\"[\\\", \\\"\\\\\\\"position\\\\\\\"\\\", \
-\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
-\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\
-\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\
-\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{FractionBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"1.5`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\
-\\\"(\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\" \\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \
-\\\")\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", FractionBox[RowBox[{\\\
-\"\\\\\\\"position\\\\\\\"\\\", \\\" \\\", \
-RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", RowBox[{\\\"0.`\\\", \
-\\\",\\\", \\\"0.5`\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"18\\\
-\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"0.75`\\\", \\\",\\\", \
-\\\"2.`\\\", \\\",\\\", \\\"0.6`\\\", \\\",\\\", \\\"1.5`\\\"}], \\\"]\\\"}], \
-\\\"[\\\", RowBox[{\\\"\\\\\\\"\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \
-\\\"\\\\\\\"\\\\\\\"\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
-\\\"4\\\", \\\"\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \
-\\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"ConvexLens\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
-\\\"\[RightDoubleBracket]\\\"}], \\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \
-\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", \
-RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
-\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\
-\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \
-\\\",\\\", RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \
-\\\"+\\\", FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", \
-RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\
-\[RightDoubleBracket]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
-RowBox[{RowBox[{RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
-\[RightSkeleton]\\\"}], \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
-\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
-\\\"]\\\"}]}], RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\
-\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}], \\\",\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-FractionBox[RowBox[{\\\"0.002`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
-\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\" \\\", \
-RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
-RowBox[{RowBox[{\\\"0.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
-RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\
-\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \
-\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]]}]}], \\\"}\\\"}], \\\"]\\\"}], \
-\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2.`\\\", \\\",\\\", \\\"2.`\\\"}], \
-\\\"}\\\"}]}], \\\"]\\\"}]\\).\"", 2, 3, 7, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.879358517327867*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"1123c3b8-1e17-4568-9a4b-97c00457d1b2"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ArrayReshape\\\", \
-\\\"::\\\", \\\"listrp\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
-during this calculation.\"", 2, 3, 8, 32365108710175702107, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.879358307887641*^9, 3.879358450055746*^9, 
-  3.8793585173558598`*^9},
- CellLabel->
-  "During evaluation of \
-In[3]:=",ExpressionUUID->"2f50ff5f-d3a7-45ee-9bcf-2d8448b498a8"]
+In[7]:=",ExpressionUUID->"f3617fc7-6109-42ec-b246-c1b82cd82b90"]
 }, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{OpticSimulate`Private`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[OpticSimulate`Private`t$$], 0, 0}}, Typeset`size$$ = {
+    396.00000000000006`, {146., 150.9279652357102}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {OpticSimulate`Private`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      OpticSimulate`Private`Render[{4, 3}, 
+        OptionValue[{
+         OpticSimulate`Private`ExecLimit -> 10000, 
+          OpticSimulate`Private`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 0, 1], 0.007}}}, OpticSimulate`Private`CanvasColor -> 
+          RGBColor[
+           0.95, 0.95, 0.95]}, {$CellContext`Sources -> {{
+            0, 1.5, Rational[1, 2] Pi, 0.002, {
+              RGBColor[0, 0, 1], 0.01}}}}, OpticSimulate`Private`Sources], 
+        OpticSimulate`Private`CropLists[OpticSimulate`Private`beams$5290, 
+         Floor[OpticSimulate`Private`t$$]], 
+        OpticSimulate`Private`realElems$5290], 
+      "Specifications" :> {{
+        OpticSimulate`Private`t$$, 0, 0, AnimationRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{836., {169.84743643933908`, 176.15256356066092`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.879437901362068*^9, 3.8794379623665504`*^9, 
+  3.8794381264088073`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"9b737156-5c11-4214-8e01-15f527c3f471"]
+}, Closed]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"OpticRenderAnimate", "[", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"4", ",", "3"}], "}"}], ",", " ", 
-   RowBox[{"{", "}"}]}], "]"}]], "Code",
- CellChangeTimes->{{3.87929255495323*^9, 
-  3.87929256438964*^9}},ExpressionUUID->"a7b86c01-986b-4621-b12c-\
-a593b08e4c4b"]
+    RowBox[{"4", ",", "4"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ConcaveLens", "[", 
+      RowBox[{
+       RowBox[{"-", "1.5"}], " ", ",", " ", "0.75", " ", ",", " ", 
+       RowBox[{"Pi", "/", "2"}], " ", ",", " ", "0.75", " ", ",", " ", "2", 
+       " ", ",", " ", "0.6"}], "]"}], ",", " ", 
+     RowBox[{"ConvexLens", "[", 
+      RowBox[{"1", ",", "1", ",", 
+       RowBox[{"Pi", "/", "3"}], ",", "0.75", ",", "2", ",", " ", "0.6"}], 
+      "]"}], ",", " ", 
+     RowBox[{"CurvedMirror", "[", 
+      RowBox[{"0", ",", "0.2", ",", "0", ",", " ", "0.5", ",", " ", "3"}], 
+      "]"}]}], "}"}], ",", " ", 
+   RowBox[{"Sources", " ", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "1", ",", 
+       RowBox[{
+        RowBox[{"-", "3"}], 
+        RowBox[{"Pi", "/", "32"}]}], ",", "0.02", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"Green", ",", " ", "0.007"}], "}"}]}], "}"}], "}"}]}]}], " ", 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.87929255495323*^9, 3.87929256438964*^9}, {
+  3.8794381980714564`*^9, 3.8794382610299363`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"a7b86c01-986b-4621-b12c-a593b08e4c4b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["217"], "Print",
+ CellChangeTimes->{3.8794382620465045`*^9},
+ CellLabel->
+  "During evaluation of \
+In[10]:=",ExpressionUUID->"7dbf6bc2-5759-4ea2-96e2-3aa8cc6cf424"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.980861193285356`"}], ",", "0.9941943064549108`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9617223865707119`"}], ",", "0.9883886129098216`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9425835798560678`"}], ",", "0.9825829193647324`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9234447731414237`"}], ",", "0.9767772258196432`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.9043059664267796`"}], ",", "0.970971532274554`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8851671597121356`"}], ",", "0.9651658387294648`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8660283529974915`"}], ",", "0.9593601451843756`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8468895462828474`"}], ",", "0.9535544516392864`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8277507395682033`"}], ",", "0.9477487580941972`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8086119328535593`"}], ",", "0.941943064549108`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.7894731261389152`"}], ",", "0.9361373710040188`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.770334319424271`"}], ",", "0.9303316774589296`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.751195512709627`"}], ",", "0.9245259839138404`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.732056705994983`"}], ",", "0.9187202903687512`"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.7129178992803389`"}], ",", "0.912914596823662`"}], 
+     "}"}]}], "}"}], "}"}]], "Print",
+ CellChangeTimes->{3.879438262053225*^9},
+ CellLabel->
+  "During evaluation of \
+In[10]:=",ExpressionUUID->"2da2894e-5705-4519-b77a-caf05cb59be3"]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{OpticSimulate`Private`t$$ = 152.1917209625245, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[OpticSimulate`Private`t$$], 0, 217}}, Typeset`size$$ = {
+    324., {161., 165.318115234375}}, Typeset`update$$ = 0, Typeset`initDone$$,
+     Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {OpticSimulate`Private`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      OpticSimulate`Private`Render[{4, 4}, 
+        OptionValue[{
+         OpticSimulate`Private`ExecLimit -> 10000, 
+          OpticSimulate`Private`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 0, 1], 0.007}}}, OpticSimulate`Private`CanvasColor -> 
+          RGBColor[
+           0.95, 0.95, 
+            0.95]}, {$CellContext`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 1, 0], 0.007}}}}, OpticSimulate`Private`Sources], 
+        OpticSimulate`Private`CropLists[OpticSimulate`Private`beams$121615, 
+         Floor[OpticSimulate`Private`t$$]], 
+        OpticSimulate`Private`realElems$121615], 
+      "Specifications" :> {{
+        OpticSimulate`Private`t$$, 0, 217, AnimationRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{773., {199.9206298828125, 205.0793701171875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8794382620969505`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"874c1180-cf58-4113-a62b-832cf9a0d886"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OpticRenderAnimate", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", " ", "4"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ConcaveLens", "[", 
+      RowBox[{
+       RowBox[{"-", "1.5"}], " ", ",", " ", "0.75", " ", ",", " ", 
+       RowBox[{"Pi", "/", "2"}], " ", ",", " ", "0.75", " ", ",", " ", "2", 
+       " ", ",", " ", "0.6"}], "]"}], ",", " ", 
+     RowBox[{"ConvexLens", "[", 
+      RowBox[{"1", ",", "1", ",", 
+       RowBox[{"Pi", "/", "3"}], ",", "0.75", ",", "2", ",", " ", "0.6"}], 
+      "]"}], ",", " ", 
+     RowBox[{"CurvedMirror", "[", 
+      RowBox[{"0", ",", "0.2", ",", "0", ",", " ", "0.5", ",", " ", "3"}], 
+      "]"}]}], "}"}], ",", " ", 
+   RowBox[{"Sources", " ", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "1", ",", 
+        RowBox[{
+         RowBox[{"-", "3"}], 
+         RowBox[{"Pi", "/", "32"}]}], ",", "0.02", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", " ", "0.007"}], "}"}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1", ",", 
+        RowBox[{
+         RowBox[{"-", "3"}], 
+         RowBox[{"Pi", "/", "32"}]}], ",", "0.02", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", " ", "0.007"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1", ",", 
+          RowBox[{
+           RowBox[{"-", "3"}], 
+           RowBox[{"Pi", "/", "32"}]}], ",", "0.02", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"Blue", ",", " ", "0.007"}], "}"}]}], "}"}]}], "}"}]}], 
+     "}"}]}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.8794386961616726`*^9, 3.8794387714999313`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"ae453436-24c3-41ca-a398-03510087f254"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["217"], "Print",
+ CellChangeTimes->{3.8794387720847197`*^9},
+ CellLabel->
+  "During evaluation of \
+In[16]:=",ExpressionUUID->"bd5546ac-66f2-40c4-9fc4-5d5985e9e968"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.980861193285356`"}], ",", "0.9941943064549108`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.9617223865707119`"}], ",", "0.9883886129098216`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.9425835798560678`"}], ",", "0.9825829193647324`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.9234447731414237`"}], ",", "0.9767772258196432`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.9043059664267796`"}], ",", "0.970971532274554`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.8851671597121356`"}], ",", "0.9651658387294648`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.8660283529974915`"}], ",", "0.9593601451843756`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.8468895462828474`"}], ",", "0.9535544516392864`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.8277507395682033`"}], ",", "0.9477487580941972`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.8086119328535593`"}], ",", "0.941943064549108`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.7894731261389152`"}], ",", "0.9361373710040188`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.770334319424271`"}], ",", "0.9303316774589296`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.751195512709627`"}], ",", "0.9245259839138404`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.732056705994983`"}], ",", "0.9187202903687512`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.7129178992803389`"}], ",", "0.912914596823662`"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.9808611932853558`"}], ",", "0.9941943064549108`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.9617223865707116`"}], ",", "0.9883886129098216`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.9425835798560674`"}], ",", "0.9825829193647324`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.9234447731414233`"}], ",", "0.9767772258196432`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.9043059664267791`"}], ",", "0.970971532274554`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.8851671597121349`"}], ",", "0.9651658387294648`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.8660283529974907`"}], ",", "0.9593601451843756`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.8468895462828465`"}], ",", "0.9535544516392864`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.8277507395682023`"}], ",", "0.9477487580941972`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.8086119328535581`"}], ",", "0.941943064549108`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.789473126138914`"}], ",", "0.9361373710040188`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.7703343194242698`"}], ",", "0.9303316774589296`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.7511955127096256`"}], ",", "0.9245259839138404`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.7320567059949814`"}], ",", "0.9187202903687512`"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.7129178992803372`"}], ",", "0.912914596823662`"}], 
+      "}"}]}], "}"}]}], "}"}]], "Print",
+ CellChangeTimes->{3.879438772091715*^9},
+ CellLabel->
+  "During evaluation of \
+In[16]:=",ExpressionUUID->"3f18e502-96ad-47de-974a-812b8e1f7629"]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{OpticSimulate`Private`t$$ = 85.56919288635254, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[OpticSimulate`Private`t$$], 0, 217}}, Typeset`size$$ = {
+    324., {161., 165.318115234375}}, Typeset`update$$ = 0, Typeset`initDone$$,
+     Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {OpticSimulate`Private`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      OpticSimulate`Private`Render[{4, 4}, 
+        OptionValue[{
+         OpticSimulate`Private`ExecLimit -> 10000, 
+          OpticSimulate`Private`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 0, 1], 0.007}}}, OpticSimulate`Private`CanvasColor -> 
+          RGBColor[
+           0.95, 0.95, 
+            0.95]}, {$CellContext`Sources -> {{-2, 1, Rational[-3, 32] Pi, 
+             0.02, {
+              RGBColor[0, 1, 0], 0.007}}, {-1, 1, Rational[-3, 32] Pi, 0.02, {
+              RGBColor[1, 0, 0], 0.007}, {0, 1, Rational[-3, 32] Pi, 0.02, {
+               RGBColor[0, 0, 1], 0.007}}}}}, OpticSimulate`Private`Sources], 
+        OpticSimulate`Private`CropLists[OpticSimulate`Private`beams$182377, 
+         Floor[OpticSimulate`Private`t$$]], 
+        OpticSimulate`Private`realElems$182377], 
+      "Specifications" :> {{
+        OpticSimulate`Private`t$$, 0, 217, AnimationRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{737., {181.9206298828125, 187.0793701171875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.879438772135331*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"281d2073-29e6-4372-a22c-7a4694676daa"]
+}, Open  ]]
 },
 WindowSize->{574.8, 573.6},
 WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
-Magnification:>0.6 Inherited,
+Magnification:>0.9 Inherited,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (August 22, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"d44e64e6-5b8e-462a-9ffe-cc0af2e52c60"
@@ -6144,39 +5936,48 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 152, 3, 21, "Text",ExpressionUUID->"edf696b8-ef63-4e47-8da2-628dfbe4de72"],
-Cell[713, 25, 400, 8, 42, "Code",ExpressionUUID->"40331012-ad0f-49e0-898c-1687c6972ce5"],
+Cell[558, 20, 152, 3, 31, "Text",ExpressionUUID->"edf696b8-ef63-4e47-8da2-628dfbe4de72"],
+Cell[713, 25, 400, 8, 62, "Code",ExpressionUUID->"40331012-ad0f-49e0-898c-1687c6972ce5"],
 Cell[CellGroupData[{
-Cell[1138, 37, 477, 11, 33, "Code",ExpressionUUID->"b09166ab-a661-4330-becd-2f2c3bf1daa2"],
-Cell[1618, 50, 4882, 85, 172, "Output",ExpressionUUID->"ec19704c-10e5-4617-9a6f-315e6b96288f"]
+Cell[1138, 37, 477, 11, 45, "Code",ExpressionUUID->"b09166ab-a661-4330-becd-2f2c3bf1daa2"],
+Cell[1618, 50, 4882, 85, 258, "Output",ExpressionUUID->"ec19704c-10e5-4617-9a6f-315e6b96288f"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6537, 140, 421, 10, 40, "Code",ExpressionUUID->"3002fb1c-4f22-42d4-8565-0dbddfff2632"],
+Cell[6961, 152, 291946, 5074, 258, "Output",ExpressionUUID->"2bfed847-2c13-4764-adff-be9ec2b49e25"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6537, 140, 420, 10, 33, "Code",ExpressionUUID->"3002fb1c-4f22-42d4-8565-0dbddfff2632"],
-Cell[6960, 152, 291920, 5073, 172, "Output",ExpressionUUID->"1ac10ccd-2a16-4739-ace2-d3e04f39a64c"]
-}, Open  ]],
+Cell[298944, 5231, 1438, 29, 45, "Code",ExpressionUUID->"5d060c04-929f-46a6-8254-c9c903c1cadc"],
 Cell[CellGroupData[{
-Cell[298917, 5230, 1389, 28, 33, "Code",ExpressionUUID->"5d060c04-929f-46a6-8254-c9c903c1cadc"],
-Cell[300309, 5260, 747, 14, 25, "Message",ExpressionUUID->"b9a70d5f-5f8f-40f9-aaea-d343d67e2415"],
-Cell[301059, 5276, 749, 14, 25, "Message",ExpressionUUID->"49713441-7d2c-4aa6-85af-a13425535d80"],
-Cell[301811, 5292, 747, 14, 25, "Message",ExpressionUUID->"bbe965ec-e374-4650-8687-53fca0b8e2c6"],
-Cell[302561, 5308, 522, 11, 17, "Message",ExpressionUUID->"563786dd-b8b4-4197-8946-5ae628615215"],
-Cell[303086, 5321, 8373, 118, 134, "Message",ExpressionUUID->"53ab8557-fa39-4eaa-8f67-147b8021f818"],
-Cell[311462, 5441, 7475, 106, 126, "Message",ExpressionUUID->"2f1db6b4-65fc-4cf7-b2b6-7a8c01c0a2dd"],
-Cell[318940, 5549, 7477, 106, 126, "Message",ExpressionUUID->"b1ec7d21-c481-4ca8-a628-f8283c7d4a79"],
-Cell[326420, 5657, 531, 11, 17, "Message",ExpressionUUID->"857fc49e-6ff3-4e67-97b6-28d308e08aa7"]
+Cell[300407, 5264, 175, 4, 19, "Print",ExpressionUUID->"132167e1-8152-4fde-a7f4-75b65c090a7d"],
+Cell[300585, 5270, 2090, 67, 52, "Print",ExpressionUUID->"2820fef8-7ac4-473e-863c-4670cc0102c8"]
 }, Open  ]],
+Cell[302690, 5340, 2559, 49, 382, "Output",ExpressionUUID->"637ee80a-98fa-46fd-83b8-db6a1ec37d25"]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[326988, 5673, 1510, 32, 33, "Code",ExpressionUUID->"3b2b3f8f-95ef-4471-a93f-0241afa6c187"],
-Cell[328501, 5707, 700, 14, 17, "Message",ExpressionUUID->"b5fbc757-c34d-4e13-8bc7-785c734be6d4"],
-Cell[329204, 5723, 698, 14, 17, "Message",ExpressionUUID->"5db68bf9-f2eb-471e-8f32-d9fa9fa8a2e4"],
-Cell[329905, 5739, 698, 14, 17, "Message",ExpressionUUID->"848437ce-faee-4406-a71d-20b56a09750c"],
-Cell[330606, 5755, 494, 11, 17, "Message",ExpressionUUID->"cba1d4c5-3da1-4103-8eda-e014d2b322dc"],
-Cell[331103, 5768, 7754, 110, 126, "Message",ExpressionUUID->"6b1625ff-f34f-4974-9fa5-79120ee1694f"],
-Cell[338860, 5880, 7734, 110, 126, "Message",ExpressionUUID->"119dc0bd-e844-4134-be20-4fb45de47ad9"],
-Cell[346597, 5992, 7732, 110, 126, "Message",ExpressionUUID->"1123c3b8-1e17-4568-9a4b-97c00457d1b2"],
-Cell[354332, 6104, 505, 11, 17, "Message",ExpressionUUID->"2f50ff5f-d3a7-45ee-9bcf-2d8448b498a8"]
+Cell[305286, 5394, 1521, 29, 40, "Code",ExpressionUUID->"3b2b3f8f-95ef-4471-a93f-0241afa6c187"],
+Cell[CellGroupData[{
+Cell[306832, 5427, 224, 5, 19, "Print",ExpressionUUID->"13105caf-49f9-48c2-8d47-1e75f1a924a6"],
+Cell[307059, 5434, 266, 7, 19, "Print",ExpressionUUID->"f3617fc7-6109-42ec-b246-c1b82cd82b90"]
 }, Open  ]],
-Cell[354852, 6118, 290, 8, 33, "Code",ExpressionUUID->"a7b86c01-986b-4621-b12c-a593b08e4c4b"]
+Cell[307340, 5444, 2687, 53, 300, "Output",ExpressionUUID->"9b737156-5c11-4214-8e01-15f527c3f471"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[310064, 5502, 1264, 32, 40, "Code",ExpressionUUID->"a7b86c01-986b-4621-b12c-a593b08e4c4b"],
+Cell[CellGroupData[{
+Cell[311353, 5538, 178, 4, 19, "Print",ExpressionUUID->"7dbf6bc2-5759-4ea2-96e2-3aa8cc6cf424"],
+Cell[311534, 5544, 2091, 67, 84, "Print",ExpressionUUID->"2da2894e-5705-4519-b77a-caf05cb59be3"]
+}, Open  ]],
+Cell[313640, 5614, 2658, 53, 422, "Output",ExpressionUUID->"874c1180-cf58-4113-a62b-832cf9a0d886"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[316335, 5672, 1801, 47, 40, "Code",ExpressionUUID->"ae453436-24c3-41ca-a398-03510087f254"],
+Cell[CellGroupData[{
+Cell[318161, 5723, 178, 4, 19, "Print",ExpressionUUID->"bd5546ac-66f2-40c4-9fc4-5d5985e9e968"],
+Cell[318342, 5729, 4136, 130, 163, "Print",ExpressionUUID->"3f18e502-96ad-47de-974a-812b8e1f7629"]
+}, Open  ]],
+Cell[322493, 5862, 2814, 55, 386, "Output",ExpressionUUID->"281d2073-29e6-4372-a22c-7a4694676daa"]
+}, Open  ]]
 }
 ]
 *)
